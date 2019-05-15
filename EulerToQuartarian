@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EulerToQuartarian : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        // A rotation 60 degrees around the rotationVector
+        Vector3 rotationVector = new Vector3(0, 1, 0);
+        Quaternion rot1 = Quaternion.AngleAxis(60, rotationVector);
+
+        transform.localRotation = rot1; // rotates around the rotationVector.
+    }
+
+}
