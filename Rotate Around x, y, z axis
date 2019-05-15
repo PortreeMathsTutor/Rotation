@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Rotate : MonoBehaviour
+{
+      // Update is called once per frame
+    void Update()
+    {//This is an Euler rotation around each of the axisis.
+        //If we wrote   transform.Rotate(0, 3, 0); the object would rotate around the y axis with speed 3.
+        transform.Rotate(2, 5, 8);
+        //This has a speed of 2 around the x axis, speed of 5 around the y axis
+        //and a speed of 8 around the z axis.
+    }
+
+}
