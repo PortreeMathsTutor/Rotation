@@ -10,7 +10,7 @@ public class QurternionRotation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // get target object tobe rotated at
+        // get target object to be rotated round
         targetObject = GameObject.FindGameObjectWithTag("TargetObject") as GameObject;
     }
     // Update is called once per frame
