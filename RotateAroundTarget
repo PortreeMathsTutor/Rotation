@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RotateAroundTarget : MonoBehaviour
+{
+   public float rotationSpeed = 5f;// This Must be less than 1 and greater than 0
+   public GameObject targetObject = null;
+
+   
+    // Update is called once per frame
+    void Update()
+    {
+        // get position of target object
+        Vector3 targetPosition = targetObject.transform.position;
+
+        // calculate rotation to be done
+        Quaternion targetRotation = Quaternion.LookRotation(targetPosition - transform.position);
+
+        // Apply rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    }
+
+}
