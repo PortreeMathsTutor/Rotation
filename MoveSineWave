@@ -17,6 +17,7 @@ public class MoveSineWave : MonoBehaviour
         newPosition = transform.position;
         newPosition.y += Mathf.Sin(Time.time) * Time.deltaTime;
         newPosition.x += Time.deltaTime;
+        //Time.deltaTime is the amount of seconds it took for the engine to process the previous frame. 
         transform.position = newPosition;
     
     }
