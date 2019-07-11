@@ -1,0 +1,14 @@
+using UnityEngine;
+
+public class MoveSineWave : MonoBehaviour
+{
+    public Vector3 newPosition;
+
+    // Update is called once per frame
+    void Update()
+    {
+        newPosition.y = Mathf.Sin(Time.time);
+        newPosition.x = newPosition.x + Time.deltaTime;
+        transform.position = newPosition;
+    }
+}
