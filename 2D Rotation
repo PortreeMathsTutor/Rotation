@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Ant : MonoBehaviour
+{
+    public float speed = 10.0f;
+    public float curDistance;
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Food")
+        {
+
+        }
+        if (other.tag == "Home")
+        {
+
+        }
+    }
+        // Start is called before the first frame update
+        void Start()
+    {
+  
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        float step = speed * Time.deltaTime;
+
+       
+        // move sprite towards the target location
+     
+
+
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Food");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+                if (curDistance <  90)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, go.transform.position, step);
+                    Vector3 vectorToTarget = go.transform.position - transform.position;
+                    float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+                    Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
+
+                }
+            }
+        }
+    }
+ }
+
+    
+
