@@ -1,0 +1,11 @@
+ public float smooth = 1f;
+ 
+ private Quaternion targetRotation;
+ 
+ void Update () 
+ {
+     if(Input.GetKeyDown(KeyCode.S)) // some condition
+         targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+     
+     transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smooth * Time.deltaTime);
+ }
