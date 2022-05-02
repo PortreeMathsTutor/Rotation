@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-
-       // float radians = angle * Mathf.Deg2Rad;
-       // float degrees = radians * Mathf.Rad2Deg;
-
-      // Update is called once per frame
     void Update()
     {//This is an Euler rotation around each of the axisis.
         //If we wrote   transform.Rotate(0, 3, 0); the object would rotate around the y axis with speed 3.
